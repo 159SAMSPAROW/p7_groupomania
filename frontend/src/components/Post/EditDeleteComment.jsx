@@ -52,7 +52,7 @@ const EditDeleteComment = ({ comment, postId }) => {
         <div className='card_container_icon'>
         <img
           onClick={() => setEdit(!edit)}
-          className="card_container_img"
+          className="card_container_icon"
           src="../../img/edit.svg"
           alt="edit-comment-icon"
         />
@@ -70,7 +70,7 @@ const EditDeleteComment = ({ comment, postId }) => {
           </div>
           <div className="card_container_footer">
             <img
-              className="card_container_img"
+              className="card_container_icon"
               src="../../img/trash.svg"
               alt="trash-icon"
               onClick={() => {
@@ -89,15 +89,15 @@ const EditDeleteComment = ({ comment, postId }) => {
       )}
       {userData.admin === true && edit && (
         <>
-          <div className="edit-comment-container">
+          <div>
             <textarea
-              className="edit-comment-input"
-              placeholder="Nouveau texte"
+              className="card_container_comment_edit_textarea"
+              placeholder="New text"
               onChange={(e) => setText(e.target.value)}
               defaultValue={comment.text}
             />
           </div>
-          <div className="edit-comment-validation">
+          <div className="card_container_comment_edit_validation">
             <img
               className="edit-comment-validation-trash"
               src={DeleteIcon}
@@ -109,7 +109,7 @@ const EditDeleteComment = ({ comment, postId }) => {
               }}
             />
             <button
-              className="card_container_send"
+              className="send"
               type="submit"
               onClick={handleEdit}
             > Valider</button>

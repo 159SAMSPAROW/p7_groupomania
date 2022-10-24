@@ -88,7 +88,7 @@ const Card = ({ post }) => {
                 <img
                   src={post.picture}
                   alt="card-pic"
-                  className="card_container_img"
+                  className="card_container_img_post"
                 />
               )}
               <div className="card_container_footer">

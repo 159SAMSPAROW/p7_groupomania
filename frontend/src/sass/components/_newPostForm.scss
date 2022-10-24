@@ -1,6 +1,6 @@
 .post_form {
   width: 90%;
-  height: auto;
+  height: 450px;
   margin: 10% 0 0 5%;
   padding: 20px;
   border: 2px solid $clr_tertiary;
@@ -12,11 +12,9 @@
   list-style-type: none;
   border-radius: 20px 20px 6px 20px;
 
-  @media screen and (max-width: 992px) {
-    width: 89%;
-  }
+
   @media screen and (max-width: 768px) {
-    width: 75%;
+    width: 80%;
     margin: 5% 20% 5% 10%;
   }
 
@@ -55,6 +53,8 @@
       margin: 25% 20% 5% 10%;
     }
   }
+
+
 
   &_container {
     position: relative;
@@ -134,4 +134,7 @@
       }
     }
   }
+}
+#message{
+margin: 1%;
 }
