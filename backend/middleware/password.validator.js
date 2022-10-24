@@ -20,7 +20,7 @@ passwordSchema // Pré-requis mot de passe
   .not()
   .oneOf(['Password', 'Password123']) // Interdire ces valeurs
 
-  console.log(passwordSchema)
+  //console.log(passwordSchema)
 
   module.exports = (req, res, next) => {
     if (passwordSchema.validate(req.body.password)) {
