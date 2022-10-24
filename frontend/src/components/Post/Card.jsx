@@ -61,8 +61,9 @@ const Card = ({ post }) => {
                     }
                   })}
               </span>
-
-              <p className="date">{dateParser(post.createdAt)}</p>
+            <div className='card_container_date'>
+              <p>{dateParser(post.createdAt)}</p>
+              </div>
             </div>
             <br />
             

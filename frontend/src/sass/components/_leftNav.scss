@@ -1,24 +1,14 @@
 .left_nav_container {
   position: relative;
   top: 10px;
-
-  @media screen and (max-width: 768px) {
-    margin-right: 5%;
-  }
-
+  left: -1px;
   &_icons {
     position: fixed;
     z-index: 1;
-    
-    & > img {
-      @media screen and (max-width: 768px) {
-      height: 20px;
-    }
-    }
-    
+  }
 
-    &_bis {
-      
+  &_bis {
+    & > img {
       & > a {
         transition: 2s;
         display: inline-block;

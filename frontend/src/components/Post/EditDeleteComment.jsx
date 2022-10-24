@@ -62,7 +62,7 @@ const EditDeleteComment = ({ comment, postId }) => {
         <>
           <div className="card_container_message">
             <textarea
-              className="card_container_icon"
+              className="card_container_comment_textarea"
               placeholder="Nouveau texte"
               onChange={(e) => setText(e.target.value)}
               defaultValue={comment.text}

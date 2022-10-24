@@ -5,9 +5,10 @@
   border-radius: 20px;
   width: 700px;
   height: auto;
-  margin: 10% 10% 0 25%;
   padding: 20px;
+  align-items: center;
   text-align: center;
+  margin: 2% 0 0 20%;
 
   @media screen and (max-width: 992px) {
     width: 600px;

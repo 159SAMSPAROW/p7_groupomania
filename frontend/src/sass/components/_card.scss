@@ -28,6 +28,10 @@
     background-color: $clr_secondary;
   }
 
+&_img_post{
+  width: 60%;
+}
+
   &_header {
     font-size: 20px;
   }
@@ -50,6 +54,14 @@
     font-size: 25px;
     color: $clr_primary;
     word-wrap: break-word;
+
+    @media screen and (max-width: 768px) {
+      width: auto;
+    }
+  }
+
+  &_date{
+    font-size: 12px;
   }
 
   &_img {
@@ -61,7 +73,7 @@
   &_footer {
     display: flex;
     flex-direction: row;
-    margin: 1% 1% 0 40%;
+    margin: 2%;
   }
 
   &_send {
@@ -71,7 +83,8 @@
   &_icon {
     display: flex;
     flex-direction: row;
-    height: 100px;
+    align-items: flex-start;
+    height: 50px;
     
     & > img {
       height: 40px;
@@ -90,7 +103,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     border: 2px solid $clr_secondary;
-    margin: 90px 0 0 -400px;
+    margin-top: 2%;
     padding: 3%;
     border-radius: 20px;
     box-shadow: 1px 1px 10px $clr_tertiary;
@@ -98,12 +111,11 @@
     background-color: white;
 
     @media screen and (max-width: 992px) {
-      margin: 15% 1% 0 -100%;
-      width: 400px;
+      width: 75%;
     }
     @media screen and (max-width: 768px) {
-      margin: 25% 1% 0 -100%;
-      width: 100%;
+      margin-top: 5%;
+     
       
     }
 
@@ -116,11 +128,14 @@
     &_text {
       color: $clr_primary;
       margin-top: 10px;
+      word-wrap: break-word;
     }
 
     &_footer{
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      margin: 5% 1% 0 -100%;
+      margin: 5% ;
     }
   }
   &_comment_textarea {

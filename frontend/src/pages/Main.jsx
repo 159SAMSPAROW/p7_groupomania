@@ -11,7 +11,9 @@ const Main = () => {
 
   return (
     <div id="main">
-      <LeftNav />
+      <div>
+        <LeftNav />
+      </div>
       <div className="main-header">
         {uid ? <NewPostForm /> : <Log signin={true} signup={false} />}
       </div>

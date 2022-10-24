@@ -4,8 +4,8 @@ import LeftNav from '../components/LeftNav'
 
 const Profil = () => {
   return (
-    <div className="profil_page">
-      <div className="profil_page_left_nav">
+    <div id="profile">
+      <div>
         <LeftNav />
       </div>
 

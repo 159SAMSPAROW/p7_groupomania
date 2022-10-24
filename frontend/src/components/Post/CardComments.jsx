@@ -46,8 +46,9 @@ const CardComments = ({ post }) => {
               }
               alt="commenter-pic"
             />
-            
-              <p >{timestampParser(Date.now())}</p>
+            <div className='card_container_date'>
+              <p>{timestampParser(Date.now())}</p>
+              </div>
               <div className="card_container_comment_text">
               <p >{comment.text}</p>
               <EditDeleteComment comment={comment} postId={post._id} />

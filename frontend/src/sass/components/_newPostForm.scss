@@ -1,7 +1,7 @@
 .post_form {
   width: 90%;
   height: 450px;
-  margin: 10% 0 0 5%;
+  margin: 2% 0 0 5%;
   padding: 20px;
   border: 2px solid $clr_tertiary;
   border-radius: 20px;
@@ -13,8 +13,13 @@
   border-radius: 20px 20px 6px 20px;
 
 
+  @media screen and (max-width: 992px) {
+   height: 350px;
+   width: 85%;
+  }
+
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 75%;
     margin: 5% 20% 5% 10%;
   }
 
