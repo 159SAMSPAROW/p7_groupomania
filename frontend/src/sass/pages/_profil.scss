@@ -1,0 +1,115 @@
+.profil_page {
+  margin: 10% 2% 0 0;
+  @media screen and (max-width: 992px) {
+    margin-left: 5%;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 20% 0 0 8%;
+  }
+  
+  &_left_nav {
+    @media screen and (max-width: 768px) {
+      margin-left: -10%;
+    }
+  }
+  &_user_name {
+    border: 2px solid $clr_tertiary;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px $clr_tertiary;
+    background: $clr_secondary;
+    text-align: center;
+  }
+
+  .profil_page_container {
+    width: 90%;
+    height: auto;
+    margin: 7% auto;
+    padding: 10px;
+    border: 2px solid $clr_tertiary;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px $clr_tertiary;
+    position: relative;
+    top: 50%;
+    background: $clr_secondary;
+
+    &_user {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-around;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    &_bio {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-around;
+      & > h2 {
+        margin-right: 10px;
+        word-wrap: break-word;
+      }
+
+      &_text {
+        font-size: 25px;
+        font-weight: bold;
+        color: $clr_primary;
+        word-wrap: break-word;
+        width: 300px;
+        height: auto;
+        margin: 2%;
+
+        @media screen and (max-width: 768px) {
+          width: 95%;
+          height: auto;
+        }
+      }
+
+      &_btn {
+        margin-top: 15%;
+        position: relative;
+        right: 45%;
+        @media screen and (max-width: 768px) {
+          left: 50%;
+        }
+      }
+      @media screen and (max-width: 992px) {
+        margin-left: 5%;
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    .icon {
+      height: 70px;
+    }
+
+    .label-file-upload {
+      cursor: pointer;
+    }
+
+    .file-upload {
+      display: none;
+    }
+
+    img {
+      height: 300px;
+      border-radius: 20px;
+
+      @media screen and (max-width: 768px) {
+        margin: 10% 1% 0 5%;
+        height: auto;
+        width: 80%;
+      }
+    }
+  }
+  .post_form {
+    border: none;
+    background: $clr_tertiary;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+  }
+}

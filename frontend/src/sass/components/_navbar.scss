@@ -1,0 +1,60 @@
+.nav {
+  position: fixed;
+  width: auto;
+  height: 50px;
+  box-shadow: 18px 1px 2px $clr_tertiary;
+  z-index: 10;
+  top: 2%;
+  width: 100%;
+
+
+  &_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 59px;
+    align-items: center;
+
+    &_logo {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+
+      & > h3 {
+        margin-left: 20px;
+        font-size: 25px;
+      }
+
+      & > img {
+        width: 40px;
+        font-weight: bold;
+        background-color: $clr_tertiary;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+      }
+    }
+    &_connected_text {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+   
+    & > ul {
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      height: 70px;
+
+      & > li {
+        list-style-type: none;
+        margin-right: 10px;
+
+      
+        & > img {
+          margin: 0 10% 15% 0;
+        }
+      }
+    }
+  }
+}

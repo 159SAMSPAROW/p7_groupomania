@@ -1,0 +1,55 @@
+.left_nav_container {
+  position: relative;
+  top: 10px;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 5%;
+  }
+
+  &_icons {
+    position: fixed;
+    z-index: 10;
+
+    & > img {
+      @media screen and (max-width: 768px) {
+        height: 34px;
+        width: 34px;
+      }
+    }
+
+    &_bis {
+      position: absolute;
+      left: 2%;
+      margin: 2%;
+      & > a {
+        transition: 2s;
+        display: inline-block;
+
+        &:before {
+          transition: 0.4s ease;
+          transform: scale(0);
+          transform-origin: center;
+          z-index: -10;
+          content: '';
+          height: 45px;
+          width: 45px;
+          position: absolute;
+          background: $clr_secondary;
+          border-radius: 50px;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+        }
+        &:hover::before {
+          transform: scale(1);
+
+          @media screen and (max-width: 992px) {
+            height: 44px;
+            width: 44px;
+          }
+        }
+      }
+    }
+  }
+}

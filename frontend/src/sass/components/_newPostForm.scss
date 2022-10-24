@@ -1,0 +1,136 @@
+.post_form {
+  width: 90%;
+  height: auto;
+  margin: 10% 0 0 5%;
+  padding: 20px;
+  border: 2px solid $clr_tertiary;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px $clr_tertiary;
+  position: relative;
+  top: 50%;
+  background-color: $clr_secondary;
+  list-style-type: none;
+  border-radius: 20px 20px 6px 20px;
+
+  @media screen and (max-width: 992px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 75%;
+    margin: 25% 20% 5% 10%;
+  }
+
+  &_data_pic {
+    display: flex;
+    width: 200px;
+    border-radius: 20px;
+    float: left;
+    margin: 2%;
+  }
+
+  &_bio {
+    color: $clr_primary;
+    font-size: 20px;
+
+    @media screen and (max-width: 768px) {
+      visibility: hidden;
+    }
+  }
+
+  &_data_pic_prev {
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  &_data_post_pic {
+    width: 600px;
+    border-radius: 5px;
+
+    @media screen and (max-width: 992px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 75%;
+      margin: 25% 20% 5% 10%;
+    }
+  }
+
+  &_container {
+    position: relative;
+    margin: 2%;
+    word-wrap: break-word;
+
+    & > textarea {
+      height: 62px;
+      width: 90%;
+      font-size: 1.4rem;
+      padding: 12px 15px;
+      border-radius: 20px 20px 6px 20px;
+    }
+
+    .footer-form {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 100%;
+
+      .icon {
+        position: relative;
+        margin-left: 5%;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+
+        img {
+          position: absolute;
+          height: 40px;
+        }
+
+        button {
+          width: 190px;
+          padding: 10px 20px;
+          background: white;
+          transition: 0.2s;
+        }
+
+        input {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+
+          opacity: 0;
+          cursor: pointer;
+
+          &::-webkit-file-upload-button {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .btn-send {
+        .cancel {
+          border-radius: 20px;
+          margin-right: 8px;
+          background: $clr_primary;
+          color: white;
+
+          &:hover {
+            color: white;
+            background: $clr_tertiary;
+          }
+        }
+        .send {
+          &:hover {
+            background-color: $clr_tertiary;
+          }
+        }
+        button {
+          @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}
