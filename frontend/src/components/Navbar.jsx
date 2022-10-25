@@ -7,7 +7,7 @@ const Navbar = () => {
   const uid = useContext(UidContext)
 
   return (
-    <nav className='nav'>
+    <nav className="nav">
       <div className="nav_container">
         <div className="nav_container_logo">
           <NavLink to="/">
@@ -20,7 +20,7 @@ const Navbar = () => {
         {uid ? (
           <ul>
             <li className="nav_container_connected_text">
-                <h5>Vous êtes Connecté !🖖</h5>
+              <h5>Vous êtes Connecté !🖖</h5>
             </li>
             <Logout />
           </ul>

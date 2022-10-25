@@ -3,28 +3,28 @@ import { useDispatch, useSelector } from 'react-redux'
 import { uploadPicture } from '../../actions/user.actions'
 
 const UploadImg = () => {
-  const [file, setFile] = useState();
-  const userData = useSelector((state) => state.userReducer);
-  const dispatch = useDispatch();
+  const [file, setFile] = useState()
+  const userData = useSelector((state) => state.userReducer)
+  const dispatch = useDispatch()
 
   const handlePicture = (e) => {
-    e.preventDefault();
-    const data = new FormData();
-    data.set("name", userData.email);
-    data.set("userId", userData._id);
-    data.set("file", file);
-    dispatch(uploadPicture(data, userData._id));
-  };
+    e.preventDefault()
+    const data = new FormData()
+    data.set('name', userData.email)
+    data.set('userId', userData._id)
+    data.set('file', file)
+    dispatch(uploadPicture(data, userData._id))
+  }
 
   return (
     <form action="" onSubmit={handlePicture} className="footer-form">
-      
-      <label  htmlFor="file" className='label-file-upload'><img className='icon' src="./img/picture.svg" alt="add-pic" />
+      <label htmlFor="file" className="label-file-upload">
+        <img className="icon" src="./img/picture.svg" alt="add-pic" />
       </label>
       <input
         type="file"
         id="file"
-        className='file-upload'
+        className="file-upload"
         name="file"
         accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}

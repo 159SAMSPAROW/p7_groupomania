@@ -21,7 +21,7 @@ module.exports.updateUser = (req, res) => {
     return res.status(400).send('ID unknown : ' + req.params.id)
 
   try {
-     UserModel.findOneAndUpdate(
+    UserModel.findOneAndUpdate(
       { _id: req.params.id },
       {
         $set: {

@@ -35,11 +35,20 @@ const LikeButton = ({ post }) => {
   return (
     <div className="card_container_icon">
       {uid && liked === false && (
-        
-        <img src={EmptyHeartImg} onClick={like} alt="like-icon" className='heart_like'/>
+        <img
+          src={EmptyHeartImg}
+          onClick={like}
+          alt="like-icon"
+          className="heart_like"
+        />
       )}
       {uid && liked && (
-        <img src={FilledHeartImg} onClick={unlike} alt="unlike-icon" className='heart_like'/>
+        <img
+          src={FilledHeartImg}
+          onClick={unlike}
+          alt="unlike-icon"
+          className="heart_like"
+        />
       )}
       <p>{post.likers.length}</p>
     </div>

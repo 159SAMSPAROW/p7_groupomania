@@ -9,7 +9,7 @@ function App() {
   const [uid, setUid] = useState(null)
   const dispatch = useDispatch()
 
-  useEffect( () => {
+  useEffect(() => {
     const fetchToken = async () => {
       await axios({
         method: 'get',
@@ -17,14 +17,12 @@ function App() {
         withCredentials: true,
       })
         .then((res) => {
-          //console.log(res)
           setUid(res.data)
         })
         .catch((err) => console.log('no token'))
     }
     fetchToken()
     if (uid) dispatch(getUser(uid))
-
   }, [uid, dispatch])
 
   return (

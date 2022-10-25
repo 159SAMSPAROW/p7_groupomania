@@ -32,10 +32,10 @@ const Thread = () => {
 
   return (
     <div className="thread_container">
-      <ul className='card_container_ul'>
+      <ul className="card_container_ul">
         {!isEmpty(posts[0]) &&
           posts.map((post) => {
-            return <Card post={ post } key={post._id} />
+            return <Card post={post} key={post._id} />
           })}
       </ul>
     </div>

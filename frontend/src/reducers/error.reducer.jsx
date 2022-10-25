@@ -1,7 +1,7 @@
-import { GET_POSTS_ERRORS } from "../actions/post.actions";
-import { GET_USER_ERRORS } from "../actions/user.actions";
+import { GET_POSTS_ERRORS } from '../actions/post.actions'
+import { GET_USER_ERRORS } from '../actions/user.actions'
 
-const initialState = { userErrors: [], postErrors: [] };
+const initialState = { userErrors: [], postErrors: [] }
 
 export default function errorReducer(state = initialState, action) {
   switch (action.type) {
@@ -9,14 +9,14 @@ export default function errorReducer(state = initialState, action) {
       return {
         postErrors: action.payload,
         userErrors: [],
-      };
+      }
 
     case GET_USER_ERRORS:
       return {
         userErrors: action.payload,
         postErrors: [],
-      };
+      }
     default:
-      return state;
+      return state
   }
 }

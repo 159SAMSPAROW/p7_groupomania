@@ -49,13 +49,13 @@ const EditDeleteComment = ({ comment, postId }) => {
         />
       )}
       {userData.admin === true && edit === false && (
-        <div className='card_container_icon'>
-        <img
-          onClick={() => setEdit(!edit)}
-          className="card_container_icon"
-          src="../../img/edit.svg"
-          alt="edit-comment-icon"
-        />
+        <div className="card_container_icon">
+          <img
+            onClick={() => setEdit(!edit)}
+            className="card_container_icon"
+            src="../../img/edit.svg"
+            alt="edit-comment-icon"
+          />
         </div>
       )}
       {isAuthor && edit && userData.admin === false && (
@@ -83,7 +83,9 @@ const EditDeleteComment = ({ comment, postId }) => {
               type="submit"
               className="validation-btn"
               onClick={handleEdit}
-            >Confirmation</button>
+            >
+              Confirmation
+            </button>
           </div>
         </>
       )}
@@ -108,11 +110,10 @@ const EditDeleteComment = ({ comment, postId }) => {
                 }
               }}
             />
-            <button
-              className="send"
-              type="submit"
-              onClick={handleEdit}
-            > Valider</button>
+            <button className="send" type="submit" onClick={handleEdit}>
+              {' '}
+              Valider
+            </button>
           </div>
         </>
       )}

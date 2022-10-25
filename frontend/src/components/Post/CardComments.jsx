@@ -38,7 +38,6 @@ const CardComments = ({ post }) => {
                 !isEmpty(usersData[0]) &&
                 usersData
                   .map((user) => {
-                   
                     if (user._id === comment.commenterId) return user.picture
                     else return null
                   })
@@ -46,11 +45,11 @@ const CardComments = ({ post }) => {
               }
               alt="commenter-pic"
             />
-            <div className='card_container_date'>
+            <div className="card_container_date">
               <p>{timestampParser(comment.timestamp)}</p>
-              </div>
-              <div className="card_container_comment_text">
-              <p >{comment.text}</p>
+            </div>
+            <div className="card_container_comment_text">
+              <p>{comment.text}</p>
               <EditDeleteComment comment={comment} postId={post._id} />
             </div>
           </div>
@@ -68,8 +67,9 @@ const CardComments = ({ post }) => {
             onClick={handleComment}
             type="button"
             className="card_container_comment_textarea_btn"
-            
-          >Envoyer</button>
+          >
+            Envoyer
+          </button>
         </div>
       )}
     </div>

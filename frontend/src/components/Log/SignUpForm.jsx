@@ -8,7 +8,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('')
   const [controlPassword, setControlPassword] = useState('')
 
-  const handleSignup =  (e) => {
+  const handleSignup = (e) => {
     e.preventDefault()
     const terms = document.getElementById('terms')
     const emailError = document.querySelector('.email.error')
@@ -29,14 +29,14 @@ const SignUpForm = () => {
       if (!terms.checked)
         termsError.innerHTML = 'Veuillez valider les conditions générales'
     } else {
-       axios({
+      axios({
         method: 'post',
         url: `${process.env.REACT_APP_API_URL}api/user/signup`,
         withCredentials: true,
         data: {
           email,
           password,
-        }
+        },
       })
         .then((res) => {
           if (res.data.errors) {
@@ -48,7 +48,6 @@ const SignUpForm = () => {
         })
         .catch((err) => {
           console.log(err)
-          
         })
     }
   }
@@ -85,7 +84,10 @@ const SignUpForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <div className="password error">Votre mot de passe doit contenir une majuscule, entre 8 et 16 caractères et 2 chiffres</div>
+          <div className="password error">
+            Votre mot de passe doit contenir une majuscule, entre 8 et 16
+            caractères et 2 chiffres
+          </div>
           <br />
           <label htmlFor="password-conf">Confirmer mot de passe</label>
           <br />
@@ -107,10 +109,9 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
           <br />
-          <button
-            type="submit"
-            className="active-btn"
-          >Valider inscription</button>
+          <button type="submit" className="active-btn">
+            Valider inscription
+          </button>
         </form>
       )}
     </>

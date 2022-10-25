@@ -31,7 +31,7 @@ module.exports.uploadProfil = (req, res) => {
   )
 
   try {
-     UserModel.findByIdAndUpdate(
+    UserModel.findByIdAndUpdate(
       req.body.userId,
       { $set: { picture: './uploads/profil/' + fileName } },
       { new: true, upsert: true, setDefaultsOnInsert: true },

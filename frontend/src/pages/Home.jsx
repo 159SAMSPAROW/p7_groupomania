@@ -8,13 +8,15 @@ const Home = () => {
 
   return (
     <div className="home">
-      
       <div className="log-container">
-        {uid ? <div><Main /> 
-        </div>
-        : 
-        <Log signin={false} signup={true} />}        
-     </div> 
+        {uid ? (
+          <div>
+            <Main />
+          </div>
+        ) : (
+          <Log signin={false} signup={true} />
+        )}
+      </div>
     </div>
   )
 }

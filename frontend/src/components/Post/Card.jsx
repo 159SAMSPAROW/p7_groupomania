@@ -61,70 +61,70 @@ const Card = ({ post }) => {
                     }
                   })}
               </span>
-            <div className='card_container_date'>
-              <p>{dateParser(post.createdAt)}</p>
+              <div className="card_container_date">
+                <p>{dateParser(post.createdAt)}</p>
               </div>
             </div>
             <br />
-            
-              <div className="card_container_message">
-                {isUpdated === false && <p>{post.message}</p>}
-              </div>
 
-              {isUpdated && (
-                <div className="update-post">
-                  <textarea
-                    id="update-message"
-                    defaultValue={post.message}
-                    onChange={(e) => setTextUpdate(e.target.value)}
-                  />
-                  <div className="update-btn-container">
-                    <button className="validation-btn" onClick={updateItem}>
-                      Valider
-                    </button>
-                  </div>
-                </div>
-              )}
-              {post.picture && (
-                <img
-                  src={post.picture}
-                  alt="card-pic"
-                  className="card_container_img_post"
+            <div className="card_container_message">
+              {isUpdated === false && <p>{post.message}</p>}
+            </div>
+
+            {isUpdated && (
+              <div className="update-post">
+                <textarea
+                  id="update-message"
+                  defaultValue={post.message}
+                  onChange={(e) => setTextUpdate(e.target.value)}
                 />
-              )}
-              <div className="card_container_footer">
-                {userData._id === post.posterId && userData.admin === false && (                  
-                    <div className='card_container_icon'>
-                    <img
-                      src="../../img/edit.svg"
-                      alt="icon-edit"
-                      onClick={() => setIsUpdated(!isUpdated)}
-                    />
-                    <DeleteCard id={post._id} />
-                  </div>
-                )}
-                {userData.admin === true && (
-                  <div className="card_container_icon">
-                    <img
-                      src="../../img/edit.svg"
-                      alt="icon-edit"
-                      onClick={() => setIsUpdated(!isUpdated)}
-                    />
-                    <DeleteCard id={post._id} />
+                <div className="update-btn-container">
+                  <button className="validation-btn" onClick={updateItem}>
+                    Valider
+                  </button>
                 </div>
-                )}              
-                  <br />
-                  <div className='card_container_icon'>      
-                  <img
-                    src="../../img/message1.svg"
-                    alt="edit icon"
-                    onClick={() => setShowComments(!showComments)}
-                  />
-                  <p>{post.comments.length}</p> 
-                  </div>
-                <LikeButton post={post} /> 
-              {showComments && <CardComments post={post} />}
               </div>
+            )}
+            {post.picture && (
+              <img
+                src={post.picture}
+                alt="card-pic"
+                className="card_container_img_post"
+              />
+            )}
+            <div className="card_container_footer">
+              {userData._id === post.posterId && userData.admin === false && (
+                <div className="card_container_icon">
+                  <img
+                    src="../../img/edit.svg"
+                    alt="icon-edit"
+                    onClick={() => setIsUpdated(!isUpdated)}
+                  />
+                  <DeleteCard id={post._id} />
+                </div>
+              )}
+              {userData.admin === true && (
+                <div className="card_container_icon">
+                  <img
+                    src="../../img/edit.svg"
+                    alt="icon-edit"
+                    onClick={() => setIsUpdated(!isUpdated)}
+                  />
+                  <DeleteCard id={post._id} />
+                </div>
+              )}
+              <br />
+              <div className="card_container_icon">
+                <img
+                  src="../../img/message1.svg"
+                  alt="edit icon"
+                  onClick={() => setShowComments(!showComments)}
+                />
+                <p>{post.comments.length}</p>
+              </div>
+              <LikeButton post={post} />
+              {showComments && <CardComments post={post} />}
+            </div>
           </div>
         </>
       )}

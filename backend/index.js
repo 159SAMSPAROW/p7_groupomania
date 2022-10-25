@@ -9,7 +9,7 @@ const { checkUser, requireAuth } = require('./middleware/auth.middleware')
 const cors = require('cors')
 
 const app = express()
-app.use(helmet());
+app.use(helmet())
 const corsOptions = {
   origin: 'http://localhost:3000',
   credentials: true,
@@ -34,7 +34,6 @@ app.get('/jwtid', requireAuth, (req, res) => {
 // routes
 app.use('/api/user', userRoutes)
 app.use('/api/post', postRoutes)
-
 
 // server
 app.listen(process.env.PORT, () => {

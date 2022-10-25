@@ -34,7 +34,6 @@ const SignInForm = () => {
   }
 
   return (
-    
     <form action="" onSubmit={handleLogin} id="sign-in-form">
       <label htmlFor="email">Email</label>
       <br />
@@ -60,7 +59,6 @@ const SignInForm = () => {
       <br />
       <input type="submit" value="Se connecter" className="active-btn" />
     </form>
-    
   )
 }
 

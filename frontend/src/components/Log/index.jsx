@@ -38,14 +38,17 @@ const Log = (props) => {
           </button>
         </div>
 
-        <div >
-          <img src="./img/icon.png" alt="logo" className="connection_form_logo"/>
+        <div>
+          <img
+            src="./img/icon.png"
+            alt="logo"
+            className="connection_form_logo"
+          />
         </div>
       </div>
       {signUpModal && <SignUpForm />}
       {signInModal && <SignInForm />}
     </div>
-    
   )
 }
 

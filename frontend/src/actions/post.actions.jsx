@@ -40,7 +40,6 @@ export const addPost = (data) => {
         console.log(res.data)
 
         if (res.data.errors) {
-          console.log(res.data.errors)
           dispatch({ type: GET_POSTS_ERRORS, payload: res.data.errors })
         }
       })

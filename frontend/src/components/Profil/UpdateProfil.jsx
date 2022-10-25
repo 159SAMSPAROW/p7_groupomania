@@ -39,9 +39,8 @@ const UpdateProfil = () => {
             {updateForm === false && (
               <>
                 <div className="profil_page_container_bio_text">
-                  <p onClick={() => setUpdateForm(!updateForm) } >
+                  <p onClick={() => setUpdateForm(!updateForm)}>
                     {userData.bio}
-                    
                   </p>
                 </div>
                 <div className="profil_page_container_bio_btn">

@@ -32,7 +32,7 @@ const NewPostForm = () => {
       data.append('message', message)
       if (file) data.append('file', file)
 
-      console.log([...data])
+      //console.log([...data])
 
       await dispatch(addPost(data))
       dispatch(getPosts())
@@ -91,9 +91,9 @@ const NewPostForm = () => {
                     </div>
                     <span>{timestampParser(Date.now())}</span>
                   </div>
-                  
+
                   <p>{message}</p>
-                 
+
                   <div>
                     {postPicture && (
                       <img
@@ -115,7 +115,7 @@ const NewPostForm = () => {
                 />
                 <input
                   type="file"
-                  className='post_form_container_footer_file_upload'
+                  className="post_form_container_footer_file_upload"
                   name="file"
                   accept=".jpg, .jpeg, .png"
                   onChange={(e) => handlePicture(e)}
@@ -124,14 +124,9 @@ const NewPostForm = () => {
 
               <div className="post_form_container_btn">
                 {message || postPicture ? (
-                  <button  onClick={cancelPost}>
-                    {' '}
-                    Annuler message
-                  </button>
+                  <button onClick={cancelPost}> Annuler message</button>
                 ) : null}
-                <button  onClick={handlePost}>
-                  Envoyer
-                </button>
+                <button onClick={handlePost}>Envoyer</button>
               </div>
             </div>
           </div>

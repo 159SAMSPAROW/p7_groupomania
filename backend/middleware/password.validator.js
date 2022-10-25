@@ -20,21 +20,15 @@ passwordSchema // Pré-requis mot de passe
   .not()
   .oneOf(['Password', 'Password123']) // Interdire ces valeurs
 
-  //console.log(passwordSchema)
-
-  module.exports = (req, res, next) => {
-    if (passwordSchema.validate(req.body.password)) {
-      next();
-    } else {
-      return (
-        res.writeHead(
-          400,
-          ""
-        ),
-        res.end(
-          "Votre mot de passe doit contenir une majuscule, entre 8 et 16 caractères et 2 chiffres"
-        )
-      );
-    }
-  };
-  
+module.exports = (req, res, next) => {
+  if (passwordSchema.validate(req.body.password)) {
+    next()
+  } else {
+    return (
+      res.writeHead(400, ''),
+      res.end(
+        'Votre mot de passe doit contenir une majuscule, entre 8 et 16 caractères et 2 chiffres',
+      )
+    )
+  }
+}
