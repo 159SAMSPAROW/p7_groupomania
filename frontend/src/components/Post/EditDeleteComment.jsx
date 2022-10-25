@@ -110,7 +110,7 @@ const EditDeleteComment = ({ comment, postId }) => {
                 }
               }}
             />
-            <button className="send" type="submit" onClick={handleEdit}>
+            <button className="card_container_comment_edit_btn" type="submit" onClick={handleEdit}>
               {' '}
               Valider
             </button>

@@ -140,37 +140,34 @@
       justify-content: space-between;
       margin: 0 auto;
       width: 100%;
-      &_file_upload {
-        @media screen and (max-width: 768px) {
-        width: 100%;
-        }
+      
+      &_file_upload{
+        margin-left: -100%;
       }
 
-      .icon {
+      &_icon {
         position: relative;
         margin-left: 5%;
         cursor: pointer;
         width: 50px;
         height: 50px;
 
-        img {
-          
+        & > img {
           margin-top: 2%;
           height: 40px;
         }
 
-        button {
+        & > button {
           width: 190px;
           padding: 10px 20px;
           background: white;
           transition: 0.2s;
         }
 
-        input {
+        & > input {
           width: 50px;
           height: 50px;
           position: absolute;
-
           opacity: 0;
           cursor: pointer;
 

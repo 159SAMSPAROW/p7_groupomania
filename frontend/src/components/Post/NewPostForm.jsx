@@ -107,7 +107,7 @@ const NewPostForm = () => {
               </div>
             ) : null}
             <div className="post_form_container_footer">
-              <div className="icon ">
+              <div className="post_form_container_footer_icon ">
                 <img
                   className="img-profil"
                   src="./img/picture.svg"

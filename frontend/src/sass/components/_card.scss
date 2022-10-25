@@ -1,5 +1,5 @@
 .card_container {
-  width: 87%;
+  width: 83%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -73,6 +73,11 @@
     display: flex;
     flex-direction: row;
     margin: 2%;
+
+    @media screen and (max-width: 768px) {
+     width: 75%;
+    }
+
   }
 
   &_send {
@@ -97,26 +102,38 @@
   }
 
   &_comment {
-    width: 600px;
+    width: 800px;
     height: auto;
     position: relative;
     top: 70px;
     right: 220px;
     border: 2px solid $clr_secondary;
-    margin-top: 2%;
+    margin: 2% 1% 0 -5%;
+
     padding: 3%;
     border-radius: 20px;
     box-shadow: 1px 1px 10px $clr_tertiary;
     font-size: 20px;
     background-color: white;
 
-    @media screen and (max-width: 992px) {
-      width: 550px;
+ 
+    @media screen and (max-width: 1016px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 918px) {
+      width: 600px;
     }
     @media screen and (max-width: 768px) {
-      width: 200px;
+      width: 400px;
       margin-left: 10%;
     }
+    @media screen and (max-width: 585px) {
+      width: 250px;
+      margin-left: 10%;
+    }
+
+
 
     &_img {
       width: 200px;
@@ -136,7 +153,6 @@
       align-items: flex-start;
       width: 75%;
       margin: 5%;
-
     }
   }
   &_comment_textarea {
@@ -157,17 +173,16 @@
       position: relative;
       top: 50px;
       right: 210px;
-      
     }
 
     &_btn {
       width: 54%;
       margin: 0;
 
-
       @media screen and (max-width: 768px) {
+
         margin: 0 0 10% 10%;
-        width: 90px;
+        width: 80px;
         height: 40px;
         font-size: 12px;
       }
@@ -186,21 +201,45 @@
     @media screen and (max-width: 768px) {
       width: 150px;
       font-size: 12px;
+      padding: 5%;
     }
   }
 
   &_comment_edit_validation {
-    margin-left: 2%;
-
+    margin-left: 10%;
+    height: 50px;
+    font-size: 15px;
+    
     @media screen and (max-width: 768px) {
-      width: 150px;
+      font-size: 12px;
+  
+      }
+  }
+
+  &_comment_edit_btn {
+    width: 100px;
+    height: 40px;
+    
+
+ @media screen and (max-width: 768px) {
+    font-size: 12px;
+
     }
+
   }
 
   &_comment_edit_trash {
     position: relative;
-    top: 50%;
+    top: 55px;
     left: 85%;
+    
+
+    @media screen and (max-width: 768px) {
+      height: 30px;
+      top: 100px;
+      margin-right: 10px;
+      }
+
   }
 
   .fa-spinner {
@@ -211,5 +250,3 @@
     color: $clr_primary;
   }
 }
-
-
