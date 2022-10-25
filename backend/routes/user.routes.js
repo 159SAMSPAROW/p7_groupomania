@@ -5,15 +5,15 @@ const userController = require('../controllers/user.controller')
 const uploadController = require('../controllers/upload.controller')
 const multer = require('multer')
 const upload = multer()
-
+const rateLimit = require('../middleware/rate-limit')
 // auth
-router.post('/signup', passwordValidator, authController.signUp)
-router.post('/login', authController.signIn)
+router.post('/signup', rateLimit, passwordValidator, authController.signUp)
+router.post('/login', rateLimit, authController.signIn)
 router.get('/logout', authController.logout)
 // user DB
 router.get('/', userController.getAllUsers)
 router.get('/:id', userController.userInfo)
-router.put('/:id', userController.updateUser)
+router.put('/:id',rateLimit,  userController.updateUser)
 router.delete('/:id', userController.deleteUser)
 
 // upload

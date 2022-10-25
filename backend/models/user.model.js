@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator =require('mongoose-unique-validator')
 const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
 
@@ -54,6 +55,8 @@ userSchema.statics.login = async function(email, password) {
   }
   throw Error('incorrect email')
 };
+
+userSchema.plugin(uniqueValidator)
 
 const UserModel = mongoose.model("user", userSchema);
 
