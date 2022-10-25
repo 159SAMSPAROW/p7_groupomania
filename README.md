@@ -1,20 +1,22 @@
-# 🚀 Javascript full-stack 🚀
-## MERN Stack
-### React / Express / MongoDB / Redux
+# p7_groupomania
 
-Démarrer le server : `npm start`
+React / Express / MongoDB / Redux
 
-Démarrer le front : `cd client` + `npm start`
+Installer le projet : npm i
+
+Démarrer le server : yarn start
+
+Démarrer le front : yarn start
 
 _____________________________
 
-### Back config :
+# Back config :
 
 * Mettez vos informations de cluster dans `/config/db.js`
-* Créez le fichier `.env` dans `/config/` dans les données suivantes
+* Créez le fichier `.env` dans `/config/` avec les données suivantes
    - PORT=5000 `votre port localhost`
    - CLIENT_URL=http://localhost:3000/ `votre URL client`
-   - DB_USER_PASS=ID:password `votre identifiant et mot de passe`
+   - DB_USER_PASS=ID:password `votre identifiant et mot de passe mongoDB`
    - TOKEN_SECRET=`votre clé secrète aléatoire`
 _________________________
   
