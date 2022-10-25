@@ -99,7 +99,7 @@ const EditDeleteComment = ({ comment, postId }) => {
           </div>
           <div className="card_container_comment_edit_validation">
             <img
-              className="edit-comment-validation-trash"
+              className="card_container_comment_edit_trash"
               src={DeleteIcon}
               alt="trash-icon"
               onClick={() => {

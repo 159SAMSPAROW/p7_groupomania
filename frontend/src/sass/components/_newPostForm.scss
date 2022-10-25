@@ -1,6 +1,6 @@
 .post_form {
   width: 90%;
-  height: 450px;
+  height: auto;
   margin: 2% 0 0 5%;
   padding: 20px;
   border: 2px solid $clr_tertiary;
@@ -12,10 +12,8 @@
   list-style-type: none;
   border-radius: 20px 20px 6px 20px;
 
-
   @media screen and (max-width: 992px) {
-   height: 350px;
-   width: 85%;
+    width: 85%;
   }
 
   @media screen and (max-width: 768px) {
@@ -41,44 +39,112 @@
     }
   }
 
-  &_data_pic_prev {
-    width: 200px;
-    border-radius: 5px;
-  }
-
-  &_data_post_pic {
-    width: 600px;
-    border-radius: 5px;
-
-    @media screen and (max-width: 992px) {
-      width: 90%;
-    }
-    @media screen and (max-width: 768px) {
-      width: 75%;
-      margin: 25% 20% 5% 10%;
-    }
-  }
-
-
-
   &_container {
-    position: relative;
     margin: 2%;
     word-wrap: break-word;
+
+    &_content {
+      width: auto;
+      height: auto;
+
+      & > p {
+        margin-left: 1%;
+      }
+    }
+
+    &_content_data {
+      height: auto;
+      font-size: 12px;
+      word-wrap: break-word;
+      margin-left: 1%;
+    }
+
+    &_content_data_email {
+      font-size: 12px;
+    }
+
+    &_data_post_pic {
+      width: 200px;
+      height: 150px;
+      margin: 1%;
+
+      @media screen and (max-width: 992px) {
+        width: 85%;
+        height: 65%;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 75%;
+        height: 50%;
+      }
+    }
+
+    &_prev {
+      background-color: white;
+      border-radius: 15px;
+      margin-top: 2%;
+      padding: 1%;
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      height: auto;
+
+      word-break: break-all;
+
+      @media screen and (max-width: 992px) {
+      }
+
+      @media screen and (max-width: 768px) {
+      }
+    }
 
     & > textarea {
       height: 62px;
       width: 90%;
-      font-size: 1.4rem;
+      font-size: 15px;
       padding: 12px 15px;
       border-radius: 20px 20px 6px 20px;
     }
 
-    .footer-form {
+    &_data_pic_prev {
+      width: 200px;
+      height: 150px;
+      border-radius: 5px;
+      margin: 1%;
+
+      @media screen and (max-width: 992px) {
+        width: 75px;
+        height: 55px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 70px;
+        height: 50px;
+      }
+    }
+
+    &_btn {
+      display: flex;
+      font-size: 15px;
+      @media screen and (max-width: 992px) {
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+        height: 10px;
+      }
+    }
+
+    &_footer {
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
       width: 100%;
+      &_file_upload {
+        @media screen and (max-width: 768px) {
+        width: 100%;
+        }
+      }
 
       .icon {
         position: relative;
@@ -88,7 +154,8 @@
         height: 50px;
 
         img {
-          position: absolute;
+          
+          margin-top: 2%;
           height: 40px;
         }
 
@@ -112,34 +179,9 @@
           }
         }
       }
-
-      .btn-send {
-        .cancel {
-          border-radius: 20px;
-          margin-right: 8px;
-          background: $clr_primary;
-          color: white;
-
-          &:hover {
-            color: white;
-            background: $clr_tertiary;
-          }
-        }
-        .send {
-          &:hover {
-            background-color: $clr_tertiary;
-          }
-        }
-        button {
-          @media screen and (max-width: 768px) {
-            font-size: 0.8rem;
-            padding: 8px;
-          }
-        }
-      }
     }
   }
 }
-#message{
-margin: 1%;
+#message {
+  margin: 1%;
 }

@@ -47,7 +47,7 @@ const CardComments = ({ post }) => {
               alt="commenter-pic"
             />
             <div className='card_container_date'>
-              <p>{timestampParser(Date.now())}</p>
+              <p>{timestampParser(comment.timestamp)}</p>
               </div>
               <div className="card_container_comment_text">
               <p >{comment.text}</p>

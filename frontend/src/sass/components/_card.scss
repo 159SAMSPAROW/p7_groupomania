@@ -11,7 +11,6 @@
   font-size: 20px;
   background-color: $clr_secondary;
 
-
   @media screen and (max-width: 768px) {
     width: 80%;
     margin: 5% 20% 5% 10%;
@@ -28,9 +27,9 @@
     background-color: $clr_secondary;
   }
 
-&_img_post{
-  width: 60%;
-}
+  &_img_post {
+    width: 60%;
+  }
 
   &_header {
     font-size: 20px;
@@ -60,12 +59,11 @@
     }
   }
 
-  &_date{
+  &_date {
     font-size: 12px;
   }
 
   &_img {
-    
     border-radius: 5px;
     margin: 20% 2% 1% 70%;
   }
@@ -85,7 +83,7 @@
     flex-direction: row;
     align-items: flex-start;
     height: 50px;
-    
+
     & > img {
       height: 40px;
       margin: 10px;
@@ -98,10 +96,11 @@
   }
 
   &_comment {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    width: 600px;
+    height: auto;
+    position: relative;
+    top: 70px;
+    right: 220px;
     border: 2px solid $clr_secondary;
     margin-top: 2%;
     padding: 3%;
@@ -111,12 +110,11 @@
     background-color: white;
 
     @media screen and (max-width: 992px) {
-      width: 75%;
+      width: 550px;
     }
     @media screen and (max-width: 768px) {
-      margin-top: 5%;
-     
-      
+      width: 200px;
+      margin-left: 10%;
     }
 
     &_img {
@@ -131,11 +129,13 @@
       word-wrap: break-word;
     }
 
-    &_footer{
+    &_footer {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      margin: 5% ;
+      align-items: flex-start;
+      width: 75%;
+      margin: 5%;
+
     }
   }
   &_comment_textarea {
@@ -148,37 +148,58 @@
     box-shadow: 1px 1px 10px $clr_tertiary;
 
     @media screen and (max-width: 992px) {
-      margin: 15% 1% 20% 20%;
+      margin: 15% 1% 5% 0;
     }
 
     @media screen and (max-width: 768px) {
-      margin: 10% 1% 0 5%;
       width: 200px;
+      position: relative;
+      top: 50px;
+      right: 210px;
+      
     }
 
     &_btn {
+      width: 54%;
+      margin: 0;
+
+
       @media screen and (max-width: 768px) {
-        margin: 10% 1% 0 5%;
-        width: 200px;
+        margin: 0 0 10% 10%;
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
       }
     }
-
   }
 
-  &_comment_edit_textarea{
-    margin-left: -50%;
-    @media screen and (max-width: 768px) {
-     width: 150px;
-    }
-
-  }
-
-  &_comment_edit_validation{
-    margin-left: -40%;
+  &_comment_edit_textarea {
+    width: 300px;
+    height: 100px;
+    margin: 15% 0 5% 0;
+    color: $clr_tertiary;
+    background-color: white;
+    padding: 2%;
+    box-shadow: 1px 1px 10px $clr_tertiary;
 
     @media screen and (max-width: 768px) {
       width: 150px;
-     }
+      font-size: 12px;
+    }
+  }
+
+  &_comment_edit_validation {
+    margin-left: 2%;
+
+    @media screen and (max-width: 768px) {
+      width: 150px;
+    }
+  }
+
+  &_comment_edit_trash {
+    position: relative;
+    top: 50%;
+    left: 85%;
   }
 
   .fa-spinner {
@@ -189,3 +210,5 @@
     color: $clr_primary;
   }
 }
+
+

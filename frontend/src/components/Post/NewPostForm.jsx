@@ -76,35 +76,37 @@ const NewPostForm = () => {
               value={message}
             />
             {message || postPicture ? (
-              <li className="post_form_container">
+              <div className="post_form_container_prev">
                 <div>
                   <img
                     src={userData.picture}
                     alt="user-pic"
-                    className="post_form_data_pic_prev"
+                    className="post_form_container_data_pic_prev"
                   />
                 </div>
-                <div className="card-right">
-                  <div className="card-header">
-                    <div className="email">
+                <div className="post_form_container_content">
+                  <div className="post_form_container_content_data">
+                    <div className="post_form_container_data_email">
                       <h3>{userData.email}</h3>
                     </div>
                     <span>{timestampParser(Date.now())}</span>
                   </div>
+                  
                   <p>{message}</p>
+                 
                   <div>
                     {postPicture && (
                       <img
                         src={postPicture}
                         alt="post-pic"
-                        className="post_form_data_post_pic"
+                        className="post_form_container_data_post_pic"
                       />
                     )}
                   </div>
                 </div>
-              </li>
+              </div>
             ) : null}
-            <div className="footer-form">
+            <div className="post_form_container_footer">
               <div className="icon ">
                 <img
                   className="img-profil"
@@ -113,21 +115,21 @@ const NewPostForm = () => {
                 />
                 <input
                   type="file"
-                  id="file-upload"
+                  className='post_form_container_footer_file_upload'
                   name="file"
                   accept=".jpg, .jpeg, .png"
                   onChange={(e) => handlePicture(e)}
                 />
               </div>
 
-              <div className="btn-send">
+              <div className="post_form_container_btn">
                 {message || postPicture ? (
-                  <button className="cancel" onClick={cancelPost}>
+                  <button  onClick={cancelPost}>
                     {' '}
                     Annuler message
                   </button>
                 ) : null}
-                <button className="send" onClick={handlePost}>
+                <button  onClick={handlePost}>
                   Envoyer
                 </button>
               </div>
