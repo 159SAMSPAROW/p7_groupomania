@@ -2,42 +2,27 @@
   position: relative;
   top: 10px;
   left: -1px;
+
+&_img{
+  height: 50px;
+  margin-right: 2%;
+
+  @media screen and (max-width: 992px) {
+    height: 40px;
+   }
+ 
+   @media screen and (max-width: 768px) {
+    height: 30px;
+   }
+
+}
+
   &_icons {
     position: fixed;
     z-index: 1;
-  }
-
-  &_bis {
+ height: 15px;
     & > img {
-      & > a {
-        transition: 2s;
-        display: inline-block;
-
-        &:before {
-          transition: 0.4s ease;
-          transform: scale(0);
-          transform-origin: center;
-          z-index: -10;
-          content: '';
-          height: 45px;
-          width: 45px;
-          position: absolute;
-          background: $clr_secondary;
-          border-radius: 50px;
-        }
-
-        &:hover {
-          transform: scale(1.02);
-        }
-        &:hover::before {
-          transform: scale(1);
-
-          @media screen and (max-width: 992px) {
-            height: 44px;
-            width: 44px;
-          }
-        }
-      }
+     
     }
   }
 }

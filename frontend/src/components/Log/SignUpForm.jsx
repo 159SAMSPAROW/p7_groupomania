@@ -109,7 +109,7 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
           <br />
-          <button type="submit" className="active-btn">
+          <button type="submit" className="connection_form_btn_submit">
             Valider inscription
           </button>
         </form>
