@@ -130,8 +130,11 @@
       }
 
       @media screen and (max-width: 768px) {
+        justify-content: flex-end;
         font-size: 12px;
         height: 10px;
+        margin: 0;
+        
       }
     }
 
@@ -181,4 +184,7 @@
 }
 #message {
   margin: 1%;
+}
+#update-message{
+  margin: 0;
 }

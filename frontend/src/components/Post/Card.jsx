@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { dateParser, isEmpty } from '../Utils'
-
 import LikeButton from './LikeButton'
 
 // SRC
@@ -49,6 +48,7 @@ const Card = ({ post }) => {
               alt="user-pic"
               className="card_container_left_post_img"
             />
+           
           </div>
           <div className="card_container_post">
             <div className="card_container_header">
@@ -72,25 +72,27 @@ const Card = ({ post }) => {
             </div>
 
             {isUpdated && (
-              <div className="update-post">
+              <div className="post_form_container">
                 <textarea
                   id="update-message"
                   defaultValue={post.message}
                   onChange={(e) => setTextUpdate(e.target.value)}
                 />
-                <div className="update-btn-container">
-                  <button className="validation-btn" onClick={updateItem}>
+                <div className="post_form_container_btn">
+                  <button  onClick={updateItem}>
                     Valider
                   </button>
                 </div>
               </div>
             )}
             {post.picture && (
+              <div>
               <img
                 src={post.picture}
                 alt="card-pic"
                 className="card_container_img_post"
               />
+              </div>
             )}
             <div className="card_container_footer">
               {userData._id === post.posterId && userData.admin === false && (

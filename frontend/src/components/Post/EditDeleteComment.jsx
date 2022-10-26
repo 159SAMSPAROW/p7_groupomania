@@ -60,17 +60,17 @@ const EditDeleteComment = ({ comment, postId }) => {
       )}
       {isAuthor && edit && userData.admin === false && (
         <>
-          <div className="card_container_message">
+          <div>
             <textarea
-              className="card_container_comment_textarea"
+              className="card_container_comment_edit_textarea"
               placeholder="Nouveau texte"
               onChange={(e) => setText(e.target.value)}
               defaultValue={comment.text}
             />
           </div>
-          <div className="card_container_footer">
+          <div className="card_container_edit_footer">
             <img
-              className="card_container_icon"
+              className="card_container_comment_edit_trash"
               src="../../img/trash.svg"
               alt="trash-icon"
               onClick={() => {
@@ -81,7 +81,7 @@ const EditDeleteComment = ({ comment, postId }) => {
             />
             <button
               type="submit"
-              className="validation-btn"
+              className="card_container_comment_edit_btn"
               onClick={handleEdit}
             >
               Confirmation

@@ -5,7 +5,7 @@
   justify-content: space-evenly;
   border: 2px solid $clr_secondary;
   margin: 2% 1% 1% 5%;
-  padding: 3%;
+  padding: 2%;
   border-radius: 20px;
   box-shadow: 1px 1px 10px $clr_tertiary;
   font-size: 20px;
@@ -17,6 +17,7 @@
 
   @media screen and (max-width: 768px) {
     width: 79%;
+    height: auto;
     margin: 5% 20% 5% 10%;
   }
 
@@ -77,10 +78,12 @@
   &_footer {
     display: flex;
     flex-direction: row;
+    justify-items: flex-end;
     margin: 2%;
 
     @media screen and (max-width: 768px) {
       width: 75%;
+      
     }
   }
 
@@ -110,7 +113,6 @@
     height: auto;
     position: relative;
     top: 10px;
-
     border: 2px solid $clr_secondary;
     margin: 2%;
     padding: 3%;
@@ -120,6 +122,7 @@
     background-color: white;
 
    
+
 
     &_img {
       width: 200px;
@@ -135,6 +138,11 @@
       color: $clr_primary;
       margin-top: 10px;
       word-wrap: break-word;
+
+      @media screen and (max-width: 768px) {
+        width: 200px;
+        flex-direction: column;
+      }
     }
 
     &_footer {
@@ -190,7 +198,9 @@
     box-shadow: 1px 1px 10px $clr_tertiary;
 
     @media screen and (max-width: 768px) {
-      width: 100px;
+      width: 150px;
+      
+      margin: 2% 0 0 0;
       font-size: 12px;
       padding: 5%;
     }
@@ -205,27 +215,37 @@
   }
 
   &_comment_edit_btn {
-    width: 100px;
+    width: 160px;
     height: 40px;
+    margin-left: 10%;
+    padding: 2%;
 
     @media screen and (max-width: 768px) {
+      
       font-size: 12px;
+      width: 100px;
+      margin-left: 20%;
     }
   }
 
   &_comment_edit_trash {
     position: relative;
     top: 55px;
-    left: 85%;
+    left: 90%;
 
     @media screen and (max-width: 768px) {
       height: 30px;
-      top: 50px;
-      left: 90%;
+      top: 100px;
+      left: 50px;
     }
   }
   &_comment_edit_footer {
     height: 100px;
+    
+    @media screen and (max-width: 768px) {
+      height: 120px;
+     
+    }
   }
   .fa-spinner {
     position: absolute;
