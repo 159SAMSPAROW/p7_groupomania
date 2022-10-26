@@ -123,8 +123,9 @@ const Card = ({ post }) => {
                 <p>{post.comments.length}</p>
               </div>
               <LikeButton post={post} />
+              </div>
               {showComments && <CardComments post={post} />}
-            </div>
+            
           </div>
         </>
       )}

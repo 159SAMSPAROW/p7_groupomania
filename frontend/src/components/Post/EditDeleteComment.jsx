@@ -91,29 +91,35 @@ const EditDeleteComment = ({ comment, postId }) => {
       )}
       {userData.admin === true && edit && (
         <>
-          <div>
-            <textarea
-              className="card_container_comment_edit_textarea"
-              placeholder="New text"
-              onChange={(e) => setText(e.target.value)}
-              defaultValue={comment.text}
-            />
-          </div>
           <div className="card_container_comment_edit_validation">
-            <img
-              className="card_container_comment_edit_trash"
-              src={DeleteIcon}
-              alt="trash-icon"
-              onClick={() => {
-                if (window.confirm('Supprimer le commentaire ?')) {
-                  handleDelete()
-                }
-              }}
-            />
-            <button className="card_container_comment_edit_btn" type="submit" onClick={handleEdit}>
-              {' '}
-              Valider
-            </button>
+            <div >
+              <textarea
+                className="card_container_comment_edit_textarea"
+                placeholder="New text"
+                onChange={(e) => setText(e.target.value)}
+                defaultValue={comment.text}
+              />
+            </div>
+            <div className='card_container_comment_edit_footer'>
+              <img
+                className="card_container_comment_edit_trash"
+                src={DeleteIcon}
+                alt="trash-icon"
+                onClick={() => {
+                  if (window.confirm('Supprimer le commentaire ?')) {
+                    handleDelete()
+                  }
+                }}
+              />
+              <button
+                className="card_container_comment_edit_btn"
+                type="submit"
+                onClick={handleEdit}
+              >
+                {' '}
+                Valider
+              </button>
+            </div>
           </div>
         </>
       )}

@@ -58,7 +58,7 @@ const CardComments = ({ post }) => {
       {userData._id && (
         <div className="card_container_comment_footer">
           <textarea
-            className="card_container_comment_textarea"
+            className="card_container_comment_footer_textarea"
             placeholder="Laisser un commentaire"
             onChange={(e) => setText(e.target.value)}
             value={text}
@@ -66,7 +66,7 @@ const CardComments = ({ post }) => {
           <button
             onClick={handleComment}
             type="button"
-            className="card_container_comment_textarea_btn"
+            className="card_container_comment_footer_textarea_btn"
           >
             Envoyer
           </button>
