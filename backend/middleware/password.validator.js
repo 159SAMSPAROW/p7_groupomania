@@ -1,7 +1,5 @@
 const PasswordValidator = require('password-validator')
-
 const passwordSchema = new PasswordValidator()
-
 passwordSchema // Pré-requis mot de passe
   .is()
   .min(8) // Minimum caractère 8

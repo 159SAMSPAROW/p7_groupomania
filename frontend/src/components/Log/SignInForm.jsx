@@ -32,7 +32,6 @@ const SignInForm = () => {
         console.log(err)
       })
   }
-
   return (
     <form action="" onSubmit={handleLogin} id="sign-in-form">
       <label htmlFor="email">Email</label>

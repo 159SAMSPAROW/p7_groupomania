@@ -28,6 +28,13 @@
     border-radius: 20px;
     float: left;
     margin: 2%;
+
+    @media screen and (max-width: 768px) {
+      width: 75%;
+      height: 75%;
+      margin: 5% 20% 5% 10%;
+    }
+
   }
 
   &_bio {

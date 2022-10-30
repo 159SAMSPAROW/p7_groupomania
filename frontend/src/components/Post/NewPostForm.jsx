@@ -23,7 +23,6 @@ const NewPostForm = () => {
     setPostPicture(URL.createObjectURL(e.target.files[0]))
     setFile(e.target.files[0])
   }
-
   const handlePost = async (e) => {
     e.preventDefault()
     if (message || postPicture) {
@@ -31,9 +30,6 @@ const NewPostForm = () => {
       data.append('posterId', userData._id)
       data.append('message', message)
       if (file) data.append('file', file)
-
-      //console.log([...data])
-
       await dispatch(addPost(data))
       dispatch(getPosts())
       cancelPost()
@@ -41,13 +37,11 @@ const NewPostForm = () => {
       alert('Veuillez entreer un message')
     }
   }
-
   const cancelPost = () => {
     setMessage('')
     setPostPicture('')
     setFile('')
   }
-
   return (
     <div className="post_form">
       {isLoading ? (

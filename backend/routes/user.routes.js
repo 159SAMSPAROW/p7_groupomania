@@ -13,7 +13,7 @@ router.get('/logout', authController.logout)
 // user DB
 router.get('/', userController.getAllUsers)
 router.get('/:id', userController.userInfo)
-router.put('/:id', rateLimit, userController.updateUser)
+router.put('/:id', userController.updateUser)
 router.delete('/:id', userController.deleteUser)
 
 // upload

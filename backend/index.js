@@ -7,8 +7,10 @@ require('dotenv').config({ path: './config/.env' })
 require('./config/db')
 const { checkUser, requireAuth } = require('./middleware/auth.middleware')
 const cors = require('cors')
+const apiLmiter = require ('./middleware/rate-limit')
 
 const app = express()
+
 app.use(helmet())
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -19,12 +21,10 @@ const corsOptions = {
   preflightContinue: false,
 }
 app.use(cors(corsOptions))
-
 app.use(express.json())
-
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-
+app.use(apiLmiter)
 // jwt
 app.get('*', checkUser)
 app.get('/jwtid', requireAuth, (req, res) => {

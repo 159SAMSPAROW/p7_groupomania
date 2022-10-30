@@ -18,11 +18,10 @@ const store = configureStore(
   { reducer: rootReducer },
   composeWithDevTools(applyMiddleware(thunk)),
 )
-
 store.dispatch(getUsers())
 store.dispatch(getPosts())
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
+//Affiche le rendu de l' application
 root.render(
   <React.StrictMode>
     <Provider store={store}>

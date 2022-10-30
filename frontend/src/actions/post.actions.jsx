@@ -1,21 +1,16 @@
 import axios from 'axios'
-
 // posts
-
 export const GET_POSTS = 'GET_POSTS'
 export const ADD_POST = 'ADD_POST'
 export const GET_ALL_POSTS = 'GET_ALL_POSTS'
-
 export const LIKE_POST = 'LIKE_POST'
 export const UNLIKE_POST = 'UNLIKE_POST'
 export const UPDATE_POST = 'UPDATE_POST'
 export const DELETE_POST = 'DELETE_POST'
-
 // Comments
 export const COMMENT_POST = 'COMMENT_POST'
 export const EDIT_COMMENT = 'EDIT_COMMENT'
 export const DELETE_COMMENT = 'DELETE_COMMENT'
-
 // Errors
 export const GET_POSTS_ERRORS = 'GET_POSTS_ERRORS'
 
@@ -31,7 +26,6 @@ export const getPosts = (num) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const addPost = (data) => {
   return (dispatch) => {
     return axios
@@ -53,7 +47,6 @@ export const addPost = (data) => {
       })
   }
 }
-
 export const likePost = (postId, userId) => {
   return (dispatch) => {
     return axios({
@@ -70,7 +63,6 @@ export const likePost = (postId, userId) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const unlikePost = (postId, userId) => {
   return (dispatch) => {
     return axios({
@@ -87,7 +79,6 @@ export const unlikePost = (postId, userId) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const updatePost = (postId, message) => {
   return (dispatch) => {
     return axios({
@@ -101,7 +92,6 @@ export const updatePost = (postId, message) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const deletePost = (postId) => {
   return (dispatch) => {
     return axios({
@@ -115,7 +105,6 @@ export const deletePost = (postId) => {
   }
 }
 // comments
-
 export const commentPost = (postId, commenterId, text) => {
   return (dispatch) => {
     return axios({
@@ -129,7 +118,6 @@ export const commentPost = (postId, commenterId, text) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const editComment = (postId, commentId, text) => {
   return (dispatch) => {
     return axios({
@@ -143,7 +131,6 @@ export const editComment = (postId, commentId, text) => {
       .catch((err) => console.log(err))
   }
 }
-
 export const deleteComment = (postId, commentId) => {
   return (dispatch) => {
     return axios({

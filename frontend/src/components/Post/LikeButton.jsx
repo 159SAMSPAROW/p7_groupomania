@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UidContext } from '../AppContext'
 import { useDispatch } from 'react-redux'
-
-// SRC
-
 import EmptyHeartImg from '../../img/heart.svg'
 import FilledHeartImg from '../../img/heart-filled.svg'
 import { likePost, unlikePost } from '../../actions/post.actions'
@@ -18,12 +15,10 @@ const LikeButton = ({ post }) => {
     dispatch(likePost(post._id, uid))
     setLiked(true)
   }
-
   const unlike = () => {
     dispatch(unlikePost(post._id, uid))
     setLiked(false)
   }
-
   useEffect(() => {
     if (post.likers.includes(uid)) {
       setLiked(true)
@@ -31,7 +26,6 @@ const LikeButton = ({ post }) => {
       setLiked(false)
     }
   }, [uid, post.likers, liked])
-
   return (
     <div className="card_container_icon">
       {uid && liked === false && (

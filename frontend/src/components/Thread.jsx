@@ -18,18 +18,15 @@ const Thread = () => {
       setLoadPost(true)
     }
   }
-
   useEffect(() => {
     if (loadPost) {
       dispatch(getPosts(count))
       setLoadPost(false)
       setCount(count + 5)
     }
-
     window.addEventListener('scroll', loadMore)
     return () => window.removeEventListener('scroll', loadMore)
   }, [loadPost, dispatch, count])
-
   return (
     <div className="thread_container">
       <ul className="card_container_ul">

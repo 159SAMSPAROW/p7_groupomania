@@ -1,8 +1,6 @@
 const UserModel = require('../models/user.model')
 const fs = require('fs')
-const { promisify } = require('util')
 const { uploadErrors } = require('../utils/errors.utils')
-const pipeline = promisify(require('stream').pipeline)
 
 module.exports.uploadProfil = (req, res) => {
   try {
@@ -12,15 +10,12 @@ module.exports.uploadProfil = (req, res) => {
       req.file.mimetype != 'image/jpeg'
     )
       throw Error('INVALID file')
-
     if (req.file.size > 500000) throw Error('max size')
   } catch (err) {
     const errors = uploadErrors(err)
     return res.status(400).json({ errors })
   }
-
   const fileName = req.body.name + '.jpg'
-
   // save l'image
   fs.writeFile(
     `${__dirname}/../../frontend/public/uploads/profil/${fileName}`,
@@ -29,7 +24,6 @@ module.exports.uploadProfil = (req, res) => {
       ''
     },
   )
-
   try {
     UserModel.findByIdAndUpdate(
       req.body.userId,

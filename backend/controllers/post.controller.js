@@ -4,7 +4,6 @@ const { uploadErrors } = require('../utils/errors.utils')
 const ObjectID = require('mongoose').Types.ObjectId
 const fs = require('fs')
 const { promisify } = require('util')
-const pipeline = promisify(require('stream').pipeline)
 
 module.exports.readPost = (req, res) => {
   PostModel.find((err, data) => {
@@ -12,7 +11,6 @@ module.exports.readPost = (req, res) => {
     else console.log('Error to get data : ' + err)
   }).sort({ createdAt: -1 }) //Permet de lire les posts du plus récent au plus ancien
 }
-
 module.exports.createPost = async (req, res) => {
   let fileName
   if (req.file != null) {
@@ -55,7 +53,6 @@ module.exports.createPost = async (req, res) => {
     return res.status(400).send(err)
   }
 }
-
 module.exports.updatePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send('ID unknown : ' + req.params.id)
@@ -74,7 +71,6 @@ module.exports.updatePost = (req, res) => {
     },
   )
 }
-
 module.exports.deletePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send('ID unknown : ' + req.params.id)
@@ -84,7 +80,6 @@ module.exports.deletePost = (req, res) => {
     else console.log('Delete error : ' + err)
   })
 }
-
 module.exports.likePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send('Id unkown : ' + req.params.id)
@@ -111,7 +106,6 @@ module.exports.likePost = (req, res) => {
     return res.status(400).send(err)
   }
 }
-
 module.exports.unlikePost = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send('Id unkown : ' + req.params.id)
@@ -138,7 +132,6 @@ module.exports.unlikePost = async (req, res) => {
     return res.status(400).send(err)
   }
 }
-
 module.exports.commentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send('ID unknown : ' + req.params.id)
@@ -163,7 +156,6 @@ module.exports.commentPost = (req, res) => {
     return res.status(400).send(err)
   }
 }
-
 module.exports.editCommentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send('ID unknown : ' + req.params.id)
@@ -186,7 +178,6 @@ module.exports.editCommentPost = (req, res) => {
     return res.status(400).send(err)
   }
 }
-
 module.exports.deleteCommentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send('ID unknown : ' + req.params.id)

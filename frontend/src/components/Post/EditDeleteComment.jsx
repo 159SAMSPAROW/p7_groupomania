@@ -1,8 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UidContext } from '../AppContext'
-
-// SRC
-
 import DeleteIcon from '../../img/trash.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteComment, editComment } from '../../actions/post.actions'
@@ -17,18 +14,15 @@ const EditDeleteComment = ({ comment, postId }) => {
 
   const handleEdit = (e) => {
     e.preventDefault()
-
     if (text) {
       dispatch(editComment(postId, comment._id, text))
       setText('')
       setEdit(false)
     }
   }
-
   const handleDelete = () => {
     dispatch(deleteComment(postId, comment._id))
   }
-
   useEffect(() => {
     const checkAuthor = () => {
       if (uid === comment.commenterId) {

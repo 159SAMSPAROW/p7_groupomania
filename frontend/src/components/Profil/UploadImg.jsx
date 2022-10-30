@@ -15,7 +15,6 @@ const UploadImg = () => {
     data.set('file', file)
     dispatch(uploadPicture(data, userData._id))
   }
-
   return (
     <form action="" onSubmit={handlePicture} className="footer-form">
       <label htmlFor="file" className="label-file-upload">

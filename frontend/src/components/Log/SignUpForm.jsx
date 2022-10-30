@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import SignInForm from './SignInForm'
-
 const SignUpForm = () => {
   const [formSubmit, setFormSubmit] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [controlPassword, setControlPassword] = useState('')
-
   const handleSignup = (e) => {
     e.preventDefault()
     const terms = document.getElementById('terms')
     const emailError = document.querySelector('.email.error')
     const passwordError = document.querySelector('.password.error')
-    const passwordConfirmError = document.querySelector(
-      '.password-confirm.error',
-    )
+    const passwordConfirmError = document.querySelector('.password-confirm.error')
     const termsError = document.querySelector('.terms.error')
-
     passwordConfirmError.innerHTML = ''
     termsError.innerHTML = ''
-
     if (password !== controlPassword || !terms.checked) {
       if (password !== controlPassword)
         passwordConfirmError.innerHTML =
@@ -48,10 +42,7 @@ const SignUpForm = () => {
         })
         .catch((err) => {
           console.log(err)
-        })
-    }
-  }
-
+        })}}
   return (
     <>
       {formSubmit ? (
@@ -117,5 +108,4 @@ const SignUpForm = () => {
     </>
   )
 }
-
 export default SignUpForm

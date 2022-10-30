@@ -45,7 +45,6 @@ export default function postReducer(state = initialState, action) {
           }
         } else return post
       })
-
     case DELETE_POST:
       return state.filter((post) => post._id !== action.payload.postId)
     case EDIT_COMMENT:

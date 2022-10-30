@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      max: 1024,
+      max: 25,
       minlength: 6,
     },
     picture: {
@@ -28,22 +28,15 @@ const userSchema = new mongoose.Schema(
       max: 500,
     },
     admin: { type: Boolean, default: false },
-    likes: {
-      type: [String],
-    },
+    likes: { type: [String]},
   },
-  {
-    timestamps: true, //Permet  d 'enregister l' heure de création
-  },
+  { timestamps: true}, //Permet  d 'enregister l' heure de création
 )
-
-// play function before save into display: 'block',
 userSchema.pre('save', async function (next) {
   const salt = await bcrypt.genSalt()
   this.password = await bcrypt.hash(this.password, 10)
   next()
 })
-
 userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email })
   if (user) {
@@ -55,9 +48,6 @@ userSchema.statics.login = async function (email, password) {
   }
   throw Error('incorrect email')
 }
-
 userSchema.plugin(uniqueValidator)
-
 const UserModel = mongoose.model('user', userSchema)
-
 module.exports = UserModel

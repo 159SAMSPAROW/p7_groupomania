@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateBio } from '../../actions/user.actions'
-
 import { isEmpty, timestampParser } from '../Utils'
 import UploadImg from './UploadImg'
-
 const UpdateProfil = () => {
   const [bio, setBio] = useState('')
   const [updateForm, setUpdateForm] = useState(false)
@@ -17,13 +15,11 @@ const UpdateProfil = () => {
     dispatch(updateBio(userData._id, bio))
     setUpdateForm(false)
   }
-
   return (
     <div className="profil_page">
       <div className="profil_page_user_name">
         <h1>Profil de {userData.email}</h1>
       </div>
-
       <div className="profil_page_container">
         <div className="profil_page_container_user">
           <h2>Ma photo de profil</h2>
@@ -32,7 +28,6 @@ const UpdateProfil = () => {
           {!isEmpty(errors)}
           {!isEmpty && <p className="errors">{errors.maxSize}</p>}
         </div>
-
         <div className="profil_page_container_bio">
           <h2>Biographie</h2>
           <div className="profil_page_container_bio_text">

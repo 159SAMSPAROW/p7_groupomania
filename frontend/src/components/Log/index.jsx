@@ -3,9 +3,11 @@ import SignUpForm from './SignUpForm'
 import SignInForm from './SignInForm'
 
 const Log = (props) => {
-  const [signUpModal, setSignUpModal] = useState(props.signup)
+  //hooks : permet de gérer l' état des composant modal
+  const [signUpModal, setSignUpModal] = useState(props.signup)//useState permet de changer la valeur de la fonction setSign..modal
   const [signInModal, setSignInModal] = useState(props.signin)
 
+  //fonction pour gérer les modals
   const handleModals = (e) => {
     if (e.target.id === 'signin') {
       setSignUpModal(false)
@@ -15,7 +17,6 @@ const Log = (props) => {
       setSignInModal(false)
     }
   }
-
   return (
     <div className="connection_form">
       <div className="connection_form_container">
@@ -49,7 +50,8 @@ const Log = (props) => {
       {signUpModal && <SignUpForm />}
       {signInModal && <SignInForm />}
     </div>
-  )
+  )//si signup = true affiche signUp modal
+  //si signin = true affiche signIn modal
 }
 
 export default Log
