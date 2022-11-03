@@ -20,7 +20,7 @@ module.exports.signInErrors = (err) => {
 
   if (err.message.includes('password'))
     errors.password =
-      'Votre mot de passe doit contenir une majuscule, entre 8 et 16 caractères et 2 chiffres'
+      'Mot de passe incorrect'
 
   return errors
 }

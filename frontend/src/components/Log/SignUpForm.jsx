@@ -76,7 +76,7 @@ const SignUpForm = () => {
             value={password}
           />
           <div className="password error">
-            Votre mot de passe doit contenir une majuscule, entre 8 et 16
+            Votre mot de passe doit contenir<br/> une majuscule,<br/> entre 8 et 16
             caractères et 2 chiffres
           </div>
           <br />

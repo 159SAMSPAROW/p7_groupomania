@@ -25,7 +25,7 @@ module.exports = (req, res, next) => {
     return (
       res.writeHead(400, ''),
       res.end(
-        'Votre mot de passe doit contenir une majuscule, entre 8 et 16 caractères et 2 chiffres',
+        'Mot de passe incorrect',
       )
     )
   }
